@@ -15,6 +15,7 @@
 		9DAD059F14D0A86400B3361C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAD059E14D0A86400B3361C /* AppDelegate.m */; };
 		9DAD05A214D0A86400B3361C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DAD05A114D0A86400B3361C /* ViewController.m */; };
 		9DAD05A514D0A86400B3361C /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DAD05A314D0A86400B3361C /* ViewController.xib */; };
+		9DAD05AC14D0A8D300B3361C /* libIOKit.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAD05AB14D0A8D300B3361C /* libIOKit.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +23,16 @@
 		9DAD058E14D0A86400B3361C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9DAD059014D0A86400B3361C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9DAD059214D0A86400B3361C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		9DAD059614D0A86400B3361C /* IOKitTest-Info.plist */ = {isa = PBXFileReference; path = "IOKitTest-Info.plist"; sourceTree = "<group>"; };
+		9DAD059614D0A86400B3361C /* IOKitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IOKitTest-Info.plist"; sourceTree = "<group>"; };
 		9DAD059814D0A86400B3361C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9DAD059A14D0A86400B3361C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9DAD059C14D0A86400B3361C /* IOKitTest-Prefix.pch */ = {isa = PBXFileReference; path = "IOKitTest-Prefix.pch"; sourceTree = "<group>"; };
-		9DAD059D14D0A86400B3361C /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		9DAD059C14D0A86400B3361C /* IOKitTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOKitTest-Prefix.pch"; sourceTree = "<group>"; };
+		9DAD059D14D0A86400B3361C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9DAD059E14D0A86400B3361C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9DAD05A014D0A86400B3361C /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		9DAD05A014D0A86400B3361C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9DAD05A114D0A86400B3361C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9DAD05A414D0A86400B3361C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		9DAD05AB14D0A8D300B3361C /* libIOKit.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libIOKit.dylib; path = usr/lib/libIOKit.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DAD05AC14D0A8D300B3361C /* libIOKit.dylib in Frameworks */,
 				9DAD058F14D0A86400B3361C /* UIKit.framework in Frameworks */,
 				9DAD059114D0A86400B3361C /* Foundation.framework in Frameworks */,
 				9DAD059314D0A86400B3361C /* CoreGraphics.framework in Frameworks */,
@@ -50,6 +53,7 @@
 		9DAD057F14D0A86300B3361C = {
 			isa = PBXGroup;
 			children = (
+				9DAD05AB14D0A8D300B3361C /* libIOKit.dylib */,
 				9DAD059414D0A86400B3361C /* IOKitTest */,
 				9DAD058D14D0A86400B3361C /* Frameworks */,
 				9DAD058B14D0A86400B3361C /* Products */,
@@ -235,10 +239,12 @@
 		9DAD05A914D0A86400B3361C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IOKitTest/IOKitTest-Prefix.pch";
 				INFOPLIST_FILE = "IOKitTest/IOKitTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/Users/gnascim/Code/Headers/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -246,10 +252,12 @@
 		9DAD05AA14D0A86400B3361C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IOKitTest/IOKitTest-Prefix.pch";
 				INFOPLIST_FILE = "IOKitTest/IOKitTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/Users/gnascim/Code/Headers/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
